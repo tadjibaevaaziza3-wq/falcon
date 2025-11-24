@@ -32,7 +32,7 @@ const About: React.FC = () => {
       {/* Big Telecom Industry Photo */}
       <div className="w-full h-[500px] relative overflow-hidden group">
          <img 
-           src="https://images.pexels.com/photos/30547579/pexels-photo-30547579.jpeg" 
+           src="https://images.pexels.com/photos/33898005/pexels-photo-33898005.jpeg" 
            alt="Telecom Industry View" 
            className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
          />

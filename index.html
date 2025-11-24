@@ -8,6 +8,13 @@
     <meta name="description" content="Falcon Telecom Expert - профессиональное проектирование и строительство ВОЛС, экспертиза проектно-сметной документации и инженерные изыскания в Узбекистане." />
     <meta name="keywords" content="ВОЛС, строительство линий связи, проектирование, экспертиза ПСД, телекоммуникации, Узбекистан, Ташкент, Falcon Telecom Expert" />
     <link rel="canonical" href="http://falcon-telecom-expert.uz/" />
+    <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1LCo-eLs1aMWpRrMkMpTgsTcfdI0Kqrpi&sz=w1000" />
+    
+    <!-- Polyfill for libraries expecting Node.js 'process' variable -->
+    <script>
+      window.process = { env: { NODE_ENV: 'production' } };
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -15,17 +22,17 @@
           extend: {
             colors: {
               falcon: {
-                50: '#fffbeb', // amber-50
-                100: '#fef3c7', // amber-100
-                200: '#fde68a', // amber-200
-                300: '#fcd34d', // amber-300
-                400: '#fbbf24', // amber-400
-                500: '#f59e0b', // amber-500 (Base Gold)
-                600: '#d97706', // amber-600 (Deep Gold - for buttons)
-                700: '#b45309', // amber-700
-                800: '#92400e', // amber-800
-                900: '#111827', // gray-900 (Rich Black for headers/footer)
-                950: '#000000', // Pure Black
+                50: '#ecfdf5', // emerald-50
+                100: '#d1fae5', // emerald-100
+                200: '#a7f3d0', // emerald-200
+                300: '#6ee7b7', // emerald-300
+                400: '#34d399', // emerald-400
+                500: '#10b981', // emerald-500
+                600: '#059669', // emerald-600 (Primary Brand Color - Green)
+                700: '#047857', // emerald-700 (Hover/Active)
+                800: '#065f46', // emerald-800
+                900: '#064e3b', // emerald-900 (Deep Green)
+                950: '#022c22', // emerald-950 (Darkest Green/Black)
               }
             },
             animation: {
@@ -50,27 +57,30 @@
         background: #f1f1f1;
       }
       ::-webkit-scrollbar-thumb {
-        background: #d97706;
+        background: #059669;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #b45309;
+        background: #047857;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

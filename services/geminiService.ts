@@ -4,11 +4,9 @@ import { ABOUT_TEXT, SERVICES } from "../constants";
 let aiClient: GoogleGenAI | null = null;
 
 export const initializeGenAI = () => {
-  if (!process.env.API_KEY) {
-    console.warn("API_KEY is missing from environment variables.");
-    return null;
-  }
   if (!aiClient) {
+    // API Key must be obtained exclusively from process.env.API_KEY.
+    // We assume this variable is pre-configured, valid, and accessible.
     aiClient = new GoogleGenAI({ apiKey: process.env.API_KEY });
   }
   return aiClient;
@@ -17,7 +15,7 @@ export const initializeGenAI = () => {
 export const generateAssistantResponse = async (userMessage: string): Promise<string> => {
   const client = initializeGenAI();
   if (!client) {
-    return "Извините, сервис AI сейчас недоступен. Пожалуйста, проверьте конфигурацию API ключа.";
+    return "Извините, сервис AI сейчас недоступен.";
   }
 
   const servicesText = SERVICES.map(s => `- ${s.title}: ${s.description}`).join('\n');

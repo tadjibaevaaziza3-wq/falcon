@@ -17,6 +17,10 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+// Using the 'thumbnail' endpoint with size w1000 bypasses the "virus scan" warning page 
+// which often breaks direct image links from Google Drive.
+const LOGO_URL = "https://drive.google.com/thumbnail?id=1LCo-eLs1aMWpRrMkMpTgsTcfdI0Kqrpi&sz=w1000";
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -60,26 +64,16 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex items-center justify-between h-24">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-4 group">
-            {/* Custom Logo SVG approximating the provided image */}
-            <div className="h-14 w-14 relative flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
-               <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Stylized F Logo */}
-                  {/* Top Black Triangle/Trapezoid */}
-                  <path d="M5 15 H95 L65 45 H35 Z" fill="#000000" />
-                  {/* Gold F-Stem and Arm (falcon-600) */}
-                  <path d="M20 20 V90 H45 V65 H70 L80 50 H45 V40 L20 20 Z" fill="#d97706" />
-                  {/* Network dots decoration (simplified) */}
-                  <circle cx="85" cy="25" r="3" fill="#9ca3af" />
-                  <circle cx="95" cy="40" r="3" fill="#9ca3af" />
-                  <path d="M85 25 L95 40" stroke="#9ca3af" strokeWidth="1" />
-               </svg>
-            </div>
-            
-            <div className="flex flex-col justify-center">
-              <span className="font-serif font-bold text-3xl text-falcon-900 leading-none tracking-tight group-hover:text-falcon-700 transition-colors">Falcon</span>
-              <span className="text-[10px] text-gray-600 tracking-[0.3em] uppercase font-sans mt-1">Telecom Expert</span>
+          {/* Main Logo (Left) */}
+          <Link to="/" className="flex-shrink-0 flex items-center group">
+            {/* Custom Logo Image from Google Drive */}
+            <div className="h-20 w-auto relative flex-shrink-0 group-hover:scale-105 transition-transform duration-300">
+               <img 
+                 src={LOGO_URL} 
+                 alt="Falcon Telecom Expert Logo" 
+                 className="h-full w-auto object-contain" 
+                 referrerPolicy="no-referrer"
+               />
             </div>
           </Link>
 
@@ -105,7 +99,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button & Lang Switch */}
-          <div className="-mr-2 flex items-center md:hidden gap-4">
+          <div className="-mr-2 flex items-center md:hidden gap-3">
              <button 
               onClick={toggleLanguage}
               className="font-bold px-2 py-1 rounded border border-gray-300 text-xs flex items-center gap-1 uppercase"

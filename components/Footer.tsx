@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             <p className="text-sm text-gray-400 mb-4">
               {t.footer.desc}
             </p>
-            <p className="text-sm">© {new Date().getFullYear()} {t.footer.rights} <br/> <span className="text-falcon-600">falcon-telecom-expert.uz</span></p>
+            <p className="text-sm">© {new Date().getFullYear()} {t.footer.rights}</p>
           </div>
 
           {/* Links */}
