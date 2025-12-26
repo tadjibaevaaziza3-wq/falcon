@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
             <p className="text-sm text-gray-400 mb-4">
               {t.footer.desc}
             </p>
-            <p className="text-sm">© {new Date().getFullYear()} {t.footer.rights}</p>
           </div>
 
           {/* Links */}
@@ -44,6 +43,22 @@ const Footer: React.FC = () => {
                <li>Тел: +998 99 833 06 08</li>
                <li className="pt-2">{t.footer.days}: 9:00 - 18:00</li>
              </ul>
+          </div>
+        </div>
+
+        {/* Copyright and Credits */}
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <p>© {new Date().getFullYear()} {COMPANY_NAME}. {t.footer.rights}</p>
+          <div className="flex items-center gap-1">
+             <span>Made by</span>
+             <a 
+               href="https://co-innovator.uz" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="text-falcon-400 hover:text-falcon-300 transition-colors font-medium"
+             >
+               co-innovator.uz
+             </a>
           </div>
         </div>
       </div>
